@@ -1,5 +1,13 @@
+open Gcompare.Loader
+
 let do_one fname =
-  let _ = Gcompare.Loader.from_file fname in
+  let () = Format.eprintf "Analysing %s@." (Filename.basename fname) in
+  let g = from_file fname in
+  let () =
+    let n = G.nb_vertex g and m = G.nb_edges g in
+    Format.printf "Vertices: %d@." n;
+    Format.printf "Edges: %d@." m
+  in
   ()
 
 type args = { input_files : string list }
