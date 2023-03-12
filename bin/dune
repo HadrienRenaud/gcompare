@@ -1,0 +1,4 @@
+(executable
+ (public_name gcompare)
+ (name main)
+ (libraries gcompare ocamlgraph))
